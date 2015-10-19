@@ -154,6 +154,7 @@
             this.Name = "Form1";
             this.ShowIcon = false;
             this.Text = "My Little Karaoke : Singing is Magic !";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);

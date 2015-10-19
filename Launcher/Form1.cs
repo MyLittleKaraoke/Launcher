@@ -52,6 +52,11 @@ namespace My_Little_Karaoke_Launcher
         {
             Process.Start("https://docs.google.com/forms/d/1UlKJQIycptQKK-re-Ps_2htehzz5GVLiBGikbQ-n2Kw/viewform");
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            webBrowser1.Refresh(WebBrowserRefreshOption.Completely);
+        }
             
         }
     }
