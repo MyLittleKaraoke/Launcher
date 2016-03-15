@@ -12,6 +12,7 @@ namespace My_Little_Karaoke_Launcher
 {
     public partial class Form3 : Form
     {
+        string folder = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
         public Form3()
         {
             InitializeComponent();
@@ -19,39 +20,37 @@ namespace My_Little_Karaoke_Launcher
 
         private void button5_Click(object sender, EventArgs e)
         {
-            {
-                string folder = Environment.ExpandEnvironmentVariables(@"%appdata%\ultrastardx");
-                Process.Start(folder);
-            }
+            Process.Start(folder + Environment.ExpandEnvironmentVariables(@"%appdata%\ultrastardx"));
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string folder = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\";
-            Process.Start(folder + "updatecheck.url");
+            Process.Start(folder + @"\updatecheck.url");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string folder = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\songs\";
-            Process.Start(folder);
+            Process.Start(folder + @"\songs\");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string folder = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\themes\";
-            Process.Start(folder);
+            Process.Start(folder + @"\themes\");
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string folder = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\";
-            Process.Start(folder);
+            Process.Start(folder + @"\");
         }
 
         private void close_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

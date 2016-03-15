@@ -26,9 +26,20 @@ namespace My_Little_Karaoke_Launcher
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string folder = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\";
-            Process.Start(folder + "ultrastardx.exe");
-            this.Close();
+            try
+            {
+                string folder = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\";
+                Process.Start(folder + "ultrastardx.exe");
+                this.Close();
+            }
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show("Sorry, was not able to find the file \"ultrastardx.exe\". Please retry!", "Opening MLK failed!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Sorry, was not able to open the file \"ultrastardx.exe\". Please retry!", "Opening MLK failed!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
