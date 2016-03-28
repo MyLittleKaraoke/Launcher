@@ -68,9 +68,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(212, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 13);
+            this.label1.Size = new System.Drawing.Size(170, 13);
             this.label1.TabIndex = 4;
-            this.label1.Text = "My Little Karaoke V4 - Launcher";
+            this.label1.Text = "My Little Karaoke 2016 - Launcher";
             // 
             // label2
             // 
