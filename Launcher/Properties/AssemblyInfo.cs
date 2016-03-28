@@ -11,7 +11,7 @@ using System.Resources;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("The Derpy Muffins Factory")]
 [assembly: AssemblyProduct("My Little Karaoke - Singing is Magic")]
-[assembly: AssemblyCopyright("Copyright The Derpy Muffins Factory ©  2015")]
+[assembly: AssemblyCopyright("Copyright The Derpy Muffins Factory ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
