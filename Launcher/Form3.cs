@@ -25,7 +25,7 @@ namespace My_Little_Karaoke_Launcher
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Process.Start(folder + @"\updatecheck.url");
+            Process.Start(folder + @"\MyLittleKaraoke_WebInstall.exe");
         }
 
         private void button2_Click(object sender, EventArgs e)
