@@ -21,15 +21,19 @@ namespace My_Little_Karaoke_Launcher
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Process.Start("https://mylittlekaraoke.com");
+            Process.Start("https://www.mylittlekaraoke.com");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                string folder = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\";
-                Process.Start(folder + "ultrastardx.exe");
+                Process compiler = new Process();
+                compiler.StartInfo.FileName = Path.Combine(Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName), "ultrastardx.exe");
+                compiler.StartInfo.WorkingDirectory = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+                compiler.StartInfo.UseShellExecute = false;
+                compiler.StartInfo.RedirectStandardOutput = false;
+                compiler.Start();
                 this.Close();
             }
             catch (FileNotFoundException)
