@@ -28,20 +28,10 @@ namespace My_Little_Karaoke_Launcher
         {
             Process.Start("http://bardiel83.deviantart.com");
         }
-     
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("http://mylittlekaraoke.com/index.php?pages/Team");
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

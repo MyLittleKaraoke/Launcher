@@ -124,7 +124,6 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Update menu";
-            this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);
 
         }

@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
-using System.Net;
 
 namespace My_Little_Karaoke_Launcher
 {
@@ -28,12 +22,12 @@ namespace My_Little_Karaoke_Launcher
         {
             try
             {
-                Process compiler = new Process();
-                compiler.StartInfo.FileName = Path.Combine(Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName), "ultrastardx.exe");
-                compiler.StartInfo.WorkingDirectory = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
-                compiler.StartInfo.UseShellExecute = false;
-                compiler.StartInfo.RedirectStandardOutput = false;
-                compiler.Start();
+                Process game = new Process();
+                game.StartInfo.FileName = Path.Combine(Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName), "ultrastardx.exe");
+                game.StartInfo.WorkingDirectory = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+                game.StartInfo.UseShellExecute = false;
+                game.StartInfo.RedirectStandardOutput = false;
+                game.Start();
                 this.Close();
             }
             catch (FileNotFoundException)
@@ -72,6 +66,5 @@ namespace My_Little_Karaoke_Launcher
         {
             webBrowser1.Refresh(WebBrowserRefreshOption.Completely);
         }
-            
-        }
     }
+}
