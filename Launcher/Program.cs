@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace My_Little_Karaoke_Launcher
@@ -12,6 +12,7 @@ namespace My_Little_Karaoke_Launcher
         [STAThread]
         static void Main()
         {
+            new Thread(new UpdaterClass().CheckForUpdates).Start();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
