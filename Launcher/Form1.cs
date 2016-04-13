@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Threading;
 using System.IO;
 
 namespace My_Little_Karaoke_Launcher
@@ -65,6 +66,7 @@ namespace My_Little_Karaoke_Launcher
         private void Form1_Load(object sender, EventArgs e)
         {
             webBrowser1.Refresh(WebBrowserRefreshOption.Completely);
+            new Thread(new UpdaterClass().CheckForUpdates).Start();
         }
     }
 }
