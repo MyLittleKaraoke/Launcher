@@ -16,8 +16,8 @@ namespace My_Little_Karaoke_Launcher {
                 var RemotePackage = GetRemotePackageVersion(FileAddressList);
                 if (!InstalledPackage.Equals("none") && !RemotePackage.Equals("none") && !InstalledPackage.Equals(RemotePackage)) {
                     if (MessageBox.Show("An update for My Little Karaoke is available. Open installer now?", "Update Time!", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes) {
-                        if (File.Exists(GameFolder + "\\MyLittleKaraoke_WebInstall.exe")) {
-                            Process.Start(GameFolder + "\\MyLittleKaraoke_WebInstall.exe");
+                        if (File.Exists(Path.Combine(GameFolder, "MyLittleKaraoke_WebInstall.exe"))) {
+                            Process.Start(Path.Combine(GameFolder, "MyLittleKaraoke_WebInstall.exe"));
                         }
                     }
                 }
