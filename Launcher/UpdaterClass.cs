@@ -4,6 +4,8 @@ using System.IO;
 using System.Windows.Forms;
 using System.Linq;
 using System.Diagnostics;
+using System.Collections.Generic;
+
 namespace My_Little_Karaoke_Launcher {
     class UpdaterClass {
 
@@ -14,8 +16,11 @@ namespace My_Little_Karaoke_Launcher {
                 var FileAddressList = GetFileAddressesListFromWeb(new Uri("https://www.mylittlekaraoke.com/store/webinst/windows.webinst"));
                 var InstalledPackage = GetPackageVersion(GameFolder);
                 var RemotePackage = GetRemotePackageVersion(FileAddressList);
-                if (!InstalledPackage.Equals("none") && !RemotePackage.Equals("none") && !InstalledPackage.Equals(RemotePackage)) {
-                    if (MessageBox.Show("An update for My Little Karaoke is available. Open installer now?", "Update Time!", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes) {
+                //Conditions: installed and remote packages exist, installed package is one of the remote ones and not the freshest one
+                if (!InstalledPackage.Equals("none") && !RemotePackage.Equals("none") && ListContains(FileAddressList, InstalledPackage) && !InstalledPackage.Equals(RemotePackage))
+                {
+                    if (MessageBox.Show("An update for My Little Karaoke is available. Open installer now?", "Update Time!", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                    {
                         if (File.Exists(Path.Combine(GameFolder, "MyLittleKaraoke_WebInstall.exe"))) {
                             Process.Start(Path.Combine(GameFolder, "MyLittleKaraoke_WebInstall.exe"));
                         }
@@ -55,6 +60,16 @@ namespace My_Little_Karaoke_Launcher {
                 catch { }
             }
             return FileTableNx2;
+        }
+
+        public bool ListContains(string[,] list, string item)
+        {
+            List<string> flattenedList = new List<string>();
+            for (int i = 0; i < list.Length / 2; ++i)
+            {
+                flattenedList.Add(list[i, 0].Contains('/') ? list[i, 0].Substring(list[i, 0].LastIndexOf('/') + 1) : list[i, 0]);
+            }
+            return flattenedList.Contains(item);
         }
 
         private string GetWebPageContent(string PageURL) {
