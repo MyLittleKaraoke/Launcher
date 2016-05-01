@@ -16,7 +16,10 @@ namespace My_Little_Karaoke_Launcher
         {
             InitializeComponent();
             string songs = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\songs\";
-            label4.Text = File.ReadAllText(songs + "version.txt");
+            if (Directory.Exists(songs))
+                label4.Text = File.ReadAllText(songs + "version.txt");
+            else
+                label4.Text = "Not available";
         }
 
         private void button1_Click(object sender, EventArgs e)
