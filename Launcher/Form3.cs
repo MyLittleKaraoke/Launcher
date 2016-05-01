@@ -20,22 +20,22 @@ namespace My_Little_Karaoke_Launcher
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Open(@"\MyLittleKaraoke_WebInstall.exe");
+            Open(folder + @"\MyLittleKaraoke_WebInstall.exe");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Open(@"\songs\");
+            Open(folder + @"\songs\");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Open(@"\themes\");
+            Open(folder + @"\themes\");
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Open(@"\");
+            Open(folder + @"\");
         }
 
         private void close_Click(object sender, EventArgs e)
@@ -45,7 +45,7 @@ namespace My_Little_Karaoke_Launcher
 
         private void Open(string path) {
             try {
-                Process.Start(folder + path);
+                Process.Start(path);
             }
             catch (Exception ex) {  
                 MessageBox.Show("Couldn't open the desired file/folder, sorry!\n\n" + ex.Message, "Action failed!", MessageBoxButtons.OK, MessageBoxIcon.Error);
