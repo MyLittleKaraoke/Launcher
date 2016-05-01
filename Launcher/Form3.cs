@@ -15,27 +15,27 @@ namespace My_Little_Karaoke_Launcher
 
         private void button5_Click(object sender, EventArgs e)
         {
-            OpenFolder(Environment.ExpandEnvironmentVariables(@"%appdata%\ultrastardx"));
+            Open(Environment.ExpandEnvironmentVariables(@"%appdata%\ultrastardx"));
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            OpenFolder(@"\MyLittleKaraoke_WebInstall.exe");
+            Open(@"\MyLittleKaraoke_WebInstall.exe");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            OpenFolder(@"\songs\");
+            Open(@"\songs\");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            OpenFolder(@"\themes\");
+            Open(@"\themes\");
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            OpenFolder(@"\");
+            Open(@"\");
         }
 
         private void close_Click(object sender, EventArgs e)
@@ -43,12 +43,12 @@ namespace My_Little_Karaoke_Launcher
             this.Close();
         }
 
-        private void OpenFolder(string path) {
+        private void Open(string path) {
             try {
                 Process.Start(folder + path);
             }
-            catch {
-                MessageBox.Show("Couldn't open the desired folder, sorry!", "Opening folder failed!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            catch (Exception ex) {  
+                MessageBox.Show("Couldn't open the desired file/folder, sorry!\n\n" + ex.Message, "Action failed!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
