@@ -43,8 +43,24 @@ namespace My_Little_Karaoke_Launcher
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form3 dlg = new Form3();
-            dlg.ShowDialog();
+            try
+            {
+                Process game = new Process();
+                game.StartInfo.FileName = Path.Combine(Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName), "MyLittleKaraoke_WebInstall.exe");
+                game.StartInfo.WorkingDirectory = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+                game.StartInfo.UseShellExecute = false;
+                game.StartInfo.RedirectStandardOutput = false;
+                game.Start();
+                this.Close();
+            }
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show("Sorry, was not able to find the file \"MyLittleKaraoke_WebInstall.exe\". Redownload the installer!", "Updater failed to launch!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Sorry, was not able to open the file \"MyLittleKaraoke_WebInstall.exe\". Redownload the installer!", "Updater failed to launch!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -56,11 +72,6 @@ namespace My_Little_Karaoke_Launcher
         private void button4_Click(object sender, EventArgs e)
         {
             Process.Start("https://www.mylittlekaraoke.com/store/beta/releases.html");
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Process.Start("https://docs.google.com/forms/d/1UlKJQIycptQKK-re-Ps_2htehzz5GVLiBGikbQ-n2Kw/viewform");
         }
 
         private void Form1_Load(object sender, EventArgs e)

@@ -36,5 +36,11 @@ namespace My_Little_Karaoke_Launcher
         {
             Process.Start("http://mylittlekaraoke.com/index.php?pages/Team");
         }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form3 dlg = new Form3();
+            dlg.ShowDialog();
+        }
     }
 }

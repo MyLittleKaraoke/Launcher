@@ -18,11 +18,6 @@ namespace My_Little_Karaoke_Launcher
             Open(Environment.ExpandEnvironmentVariables(@"%appdata%\ultrastardx"));
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Open(folder + @"\MyLittleKaraoke_WebInstall.exe");
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             Open(folder + @"\songs\");
