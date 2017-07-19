@@ -121,7 +121,7 @@
             this.webBrowser1.ScrollBarsEnabled = false;
             this.webBrowser1.Size = new System.Drawing.Size(320, 450);
             this.webBrowser1.TabIndex = 0;
-            this.webBrowser1.Url = new System.Uri("http://sco.mylittlekaraoke.com/store/beta/", System.UriKind.Absolute);
+            this.webBrowser1.Url = new System.Uri("https://sco.mylittlekaraoke.com/store/beta/", System.UriKind.Absolute);
             this.webBrowser1.WebBrowserShortcutsEnabled = false;
             // 
             // Form1

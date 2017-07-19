@@ -89,7 +89,7 @@
             this.label3.Size = new System.Drawing.Size(315, 46);
             this.label3.TabIndex = 6;
             this.label3.Text = "This game makes use of the UltraStar Deluxe engine, UltraStar Deluxe is licenced " +
-    "under GNU GPL V2, Visit http://ultrastardx.sourceforge.net for more information." +
+    "under GNU GPL V2, Visit https://usdx.eu for more information." +
     "";
             // 
             // linkLabel2

@@ -29,12 +29,12 @@ namespace My_Little_Karaoke_Launcher
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("http://bardiel83.deviantart.com");
+            Process.Start("https://bardiel83.deviantart.com");
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("http://mylittlekaraoke.com/index.php?pages/Team");
+            Process.Start("https://mylittlekaraoke.com/index.php?pages/Team");
         }
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
